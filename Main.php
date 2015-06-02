@@ -6,7 +6,7 @@
     {
    	    require_once($class.".class.php");
     }
-
+    Conexao::getInstance();
     $semestre = new Semestre(01,"2015.1");
     $semestre2 = new Semestre(02,"2015.2");
     $pedro = new Professor(01,"Pedro","111.111.111-11","01-01-2010","01020304","5545545");
