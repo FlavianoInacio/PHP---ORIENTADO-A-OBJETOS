@@ -6,16 +6,14 @@
     {	
     	private $codigo;
         private $nome;
-        private $semestre;
         private $professor;
         private $livros;
 
 
-    	function __construct($codigo,$nome,$semestre,$professor)
+    	function __construct($codigo,$nome,$professor)
     	{
     		$this->codigo = $codigo;
     		$this->nome = $nome;
-    		$this->semestre = $semestre;
     		$this->professor = $professor;
     	}
     	public function getNome()
@@ -25,10 +23,6 @@
     	public function getCodigo()
     	{
     		return $this->codigo;
-    	}
-    	public function getSemestre()
-    	{
-    		return $this->semestre;
     	}
     	public function getProfessor()
     	{
@@ -42,10 +36,6 @@
     	{
     		$this->nome = $codigo;
     	}
-    	public function setSemestre($semestre)
-    	{
-    		$this->semestre = $semestre;
-    	}
     	public function setProfessor($professor)
     	{
     		$this->professor = $professor;
@@ -54,11 +44,16 @@
     	{
     		$this->livros[] = $livro;
     	}
-    	public function getLivros()
-    	{
-    		foreach ($this->livros as $key => $value) {
-    			echo "Livro : " . $value->getNome() . "<br>";
-    		}
+    	public function listarLivros()
+    	{   
+            if($this->livros)
+            {
+                foreach ($this->livros as $key => $value)
+                {
+                    echo $value->getNome() . "<br>";
+                }
+            }
+    		
     	}
     
     }

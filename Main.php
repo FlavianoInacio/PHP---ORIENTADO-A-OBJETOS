@@ -7,31 +7,33 @@
    	    require_once($class.".class.php");
     }
     Conexao::getInstance();
-    $semestre = new Semestre(01,"2015.1");
+    /*
+        INTANCIANDO TODOS OBJETOS
+    */
+    $semestre = new Semestre(01,"2015.1"); 
     $semestre2 = new Semestre(02,"2015.2");
     $pedro = new Professor(01,"Pedro","111.111.111-11","01-01-2010","01020304","5545545");
-    $pooPHP = new Livro("Programação Orientada a Objetos com PHP","05-07-2009","Pabli de Oino",1);
-    $pooJava = new Livro("Programação Orientada a Objetos com Java","05-07-2009","Pabli de Oino",1);
-    /*
-    echo "Código do Semestre : ".$semestre->getCodigo()."<br>";
-    echo "Semestre cadastrado : ".$semestre->getNome()."<br>";
-    $semestre->setNome("2015.2");
-    $semestre->setCodigo(02);
-    echo $semestre->getNome()."<br>";
-    echo $semestre->getCodigo()."<br>";
-	*/
+    $livroPhp = new Livro("Programação Orientada a Objetos com PHP","05-07-2009","Pabli de Oino",1);
+    $livroJava = new Livro("Programação Orientada a Objetos com Java","05-07-2009","Pabli de Oino",1);
+    $topicosI = new Materia(01,"TOPICOS I",$pedro);
+    $Compiladores = new Materia(02,"COMPILADORES",$pedro);
 
-    $topicosI = new Materia(01,"TOPICOS I",$semestre,$pedro);
-    $topicosI->addLivro($pooPHP);
-    $topicosI->addLivro($pooJava);
-    echo "Matéria : " . $topicosI->getNome() . "<br>";
-    echo "Semestre : " . $topicosI->getSemestre()->getNome() ."<br>";
-    echo "Professor : " . $topicosI->getProfessor()->getNome() . "<br>";
-    echo $topicosI->getLivros();
     /*
-    $topicosI->setSemestre($semestre2);
-    echo "Matéria : ".$topicosI->getNome()."<br>";
-    echo "Semestre : ".$topicosI->getSemestre()->getNome()."<br>";
-	*/
+        Movimenação dos Objetos
+    */
+    
+    $semestre->addMaterias($topicosI);
+    $semestre->addMaterias($Compiladores);
 
+    $topicosI->addLivro($livroPhp);
+    $topicosI->addLivro($livroJava);
+
+    echo "Semestre : ".$semestre->getNome()."<br>";
+
+    foreach ($semestre->getMateria() as $key => $value) {
+        echo "Materia : ".$value->getNome()."<br>";
+        echo "Professor : ".$value->getProfessor()->getNome()."<br>";
+        echo  "Livro : <br>";
+        echo  $value->listarLivros()."<br>";
+    }
  ?>
