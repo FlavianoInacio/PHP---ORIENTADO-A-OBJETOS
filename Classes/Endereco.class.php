@@ -1,5 +1,5 @@
 <?php 
-
+	namespace Classes;
 	trait Endereco
 	{
 		private $endereco;
@@ -8,6 +8,16 @@
 		private $uf;
 		private $cep;
 		private $tel;
+
+		public function __construct($endereco,$bairro,$cidade,$uf,$cep,$tel)
+		{
+			$this->endereco = $endereco;
+			$this->bairro = $bairro;
+			$this->cidade = $cidade;
+			$this->uf = $uf;
+			$this->cep = $cep;
+			$this->tel = $tel;
+		}
 
 		public function setEndereco($endereco)
 		{

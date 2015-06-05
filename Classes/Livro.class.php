@@ -1,5 +1,5 @@
 <?php 
-	
+	namespace Classes;
 	class Livro extends Material
 	{
 		private $capitulo;

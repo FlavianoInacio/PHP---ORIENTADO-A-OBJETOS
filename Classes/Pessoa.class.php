@@ -1,5 +1,5 @@
 <?php 
-    
+    namespace Classes;
     class Pessoa extends Usuario
     {
     	private $nome;
