@@ -1,5 +1,5 @@
 <?php 
-	namespace Classes;
+	namespace Controller;
 	class Professor extends Pessoa
 	{
 		use Endereco

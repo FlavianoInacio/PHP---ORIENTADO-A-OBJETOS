@@ -1,5 +1,5 @@
 <?php 
-	require_once(" \\xampp\htdocs\phpOO\Main.php");
+	require_once ( dirname( dirname( __FILE__ ) ) .DIRECTORY_SEPARATOR."Main.php");
 	echo "Semestre : ".$semestre->getNome()."<br>";
     foreach ($semestre->getMateria() as $key => $value)
     {

@@ -2,11 +2,11 @@
 <?php 
     mb_http_output('UTF-8');
     require_once("Autoload.php");
-    require_once(dirname(__FILE__)."\Classes\DataBase\Conexao.class.php");
-    use Classes\Semestre;
-    use Classes\Professor;
-    use Classes\Livro;
-    use Classes\Materia;
+    require_once(dirname(__FILE__)."\Controller\DataBase\Conexao.class.php");
+    use Controller\Semestre;
+    use Controller\Professor;
+    use Controller\Livro;
+    use Controller\Materia;
     Conexao::getInstance();   
     $semestre = new Semestre(01,"2015.1"); 
     $semestre2 = new Semestre(02,"2015.2");

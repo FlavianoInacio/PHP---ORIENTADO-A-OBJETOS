@@ -1,5 +1,5 @@
 <?php 
-	namespace Classes;
+	namespace Controller;
 	trait Endereco
 	{
 		private $endereco;

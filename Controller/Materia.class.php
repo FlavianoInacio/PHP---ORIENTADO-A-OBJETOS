@@ -1,5 +1,5 @@
 <?php 
-    namespace Classes;
+    namespace Controller;
     class Materia
     {	
     	private $codigo;
@@ -8,9 +8,8 @@
         private $livros;
 
 
-    	function __construct($codigo,$nome,$professor)
+    	function __construct($nome,$professor)
     	{
-    		$this->codigo = $codigo;
     		$this->nome = $nome;
     		$this->professor = $professor;
     	}
